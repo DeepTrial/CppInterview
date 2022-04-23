@@ -24,7 +24,7 @@ void floatNumToBinaryString(float num, std::string& result)
 {
     int numIntPart;
     std::string strIntPart="";
-    float numDecimalPart;
+    float numFloatPart;
     std::string strDecimalPart="";
 
     //if negative
@@ -36,7 +36,7 @@ void floatNumToBinaryString(float num, std::string& result)
 
     //split data
     numIntPart = (int)num;
-    numDecimalPart = num - numIntPart;
+    numFloatPart = num - numIntPart;
 
 
     //int to binary
@@ -56,11 +56,11 @@ void floatNumToBinaryString(float num, std::string& result)
 
 
     //float to binary
-    while(int(numDecimalPart)!=numDecimalPart)
+    while(int(numFloatPart)!=numFloatPart)
     {
-        numDecimalPart *= 2;
-        strDecimalPart += (int)numDecimalPart>0?'1':'0';
-        numDecimalPart -= (int)numDecimalPart;
+        numFloatPart *= 2;
+        strDecimalPart += (int)numFloatPart>0?'1':'0';
+        numFloatPart -= (int)numFloatPart;
     }
 
 
